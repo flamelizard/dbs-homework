@@ -1,3 +1,4 @@
+# COS image for simplicity
 data "google_compute_image" "cos" {
   family  = "cos-stable"
   project = "cos-cloud"
@@ -8,11 +9,6 @@ resource "google_compute_instance_template" "template" {
   machine_type = "e2-medium"
   region       = var.region
 
-  labels = {
-    app_name = var.app_name
-    env      = var.env
-  }
-
   disk {
     source_image = data.google_compute_image.cos.self_link
   }
@@ -22,8 +18,6 @@ resource "google_compute_instance_template" "template" {
   }
 
   metadata = {
-    APP            = var.app_name
-    ENV            = var.env
     startup-script = <<EOF
       #!/bin/bash
       set -xe
@@ -58,6 +52,7 @@ resource "google_compute_health_check" "basic" {
   timeout_sec        = 5
   check_interval_sec = 5
 
+  # simple check for open port
   tcp_health_check {
     port = "80"
   }

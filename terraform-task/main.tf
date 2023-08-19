@@ -1,7 +1,6 @@
 provider "google" {
   project = "bob-lab-320120"
   region  = "europe-central2"
-  zone    = "europe-central2-a"
 }
 
 module "simpleAppDeployer" {
