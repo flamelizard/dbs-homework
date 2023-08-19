@@ -1,11 +1,3 @@
-variable "region" {
-  type = string
-}
-
-variable "zone" {
-  type = string
-}
-
 variable "env" {
   type = string
 }
@@ -25,4 +17,3 @@ variable "app_image" {
 variable "app_version" {
   type = string
 }
-

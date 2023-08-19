@@ -1,19 +1,18 @@
 provider "google" {
-  # todo read credentials
   project = "bob-lab-320120"
-  zone    = "europe-central2-a"
   region  = "europe-central2"
+  zone    = "europe-central2-a"
 }
 
 module "simpleAppDeployer" {
   source      = "./modules/terraform-gcp-simpleAppDeployer"
   region      = "europe-central2"
   zone        = "europe-central2-a"
-  env         = "staging"
-  nodes_size  = 2
-  app_name    = "hello-app"
-  app_image   = "nginxdemos/hello"
-  app_version = "0.3"
+  env         = var.env
+  nodes_size  = var.nodes_size
+  app_name    = var.app_name
+  app_image   = var.app_image
+  app_version = var.app_version
 }
 
 output "app_ip_address" {
