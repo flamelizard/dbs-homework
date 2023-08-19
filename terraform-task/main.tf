@@ -1,5 +1,5 @@
 provider "google" {
-  project = "bob-lab-320120"
+  project = "SET_PROJECT"
   region  = "europe-central2"
 }
 
