@@ -1,4 +1,7 @@
 # DBS Homework
 
-Provision infra e.g.
-terraform apply -var-file=env/dev.tfvars
+Provision infra example:
+- terraform apply -var-file=env/dev.tfvars
+
+Deploy environment example: 
+- kubectl apply -k envs/dev

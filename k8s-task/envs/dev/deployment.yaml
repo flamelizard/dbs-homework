@@ -1,0 +1,12 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello
+spec:
+  replicas: 2
+  template:
+    spec:
+      containers:
+      - image: nginxdemos/hello:0.3
+        name: hello
+
