@@ -4,4 +4,4 @@ Provision infra example:
 - terraform apply -var-file=env/dev.tfvars
 
 Deploy environment example: 
-- kubectl apply -k envs/dev
+- kubectl apply -k env/dev
